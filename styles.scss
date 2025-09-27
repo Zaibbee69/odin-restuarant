@@ -1,0 +1,340 @@
+$oliveGreen: #606c38;
+$drabGreen: #283618;
+$beige: #fefae0;
+$camelBrown: #dda15e;
+$darkCamelBrown: #bc6c25;
+
+%flexer-extender
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%box-shadower-extender
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: $beige;
+    font-family: "Segoe UI", sans-serif;
+    color: $drabGreen;
+    line-height: 1.6;
+}
+
+header
+{
+    margin-bottom: 2rem;
+    & > nav
+    {
+        @extend %flexer-extender;
+        @extend %box-shadower-extender;
+        gap: 1.5rem;
+        padding: 20px;
+        background-color: $drabGreen;
+        border-bottom-left-radius: 20% 80px; /* curved bottom */
+        border-bottom-right-radius: 20% 80px;
+
+        & button
+        {
+            padding: 10px 30px;
+            background-color: $oliveGreen;
+            color: $beige;
+            font-weight: bolder;
+            border: none;
+            border-bottom-left-radius: 80% 80px;
+            border-bottom-right-radius: 80% 80px;
+            transition: 0.15s ease-in-out;
+            cursor: pointer;
+
+            &:hover
+            {
+                background-color: $beige;
+                color: $oliveGreen;
+            }
+
+            &:active
+            {
+                opacity: 0.9;
+            }
+        }
+    }
+
+}
+
+// Main wrapper
+main {
+  #content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+// Hero Section
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(rgba(40, 54, 24, 0.7), rgba(40, 54, 24, 0.7)),
+              url("images/restaurant-bg.jpg") center/cover no-repeat;
+  color: $beige;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-btn {
+    background: $camelBrown;
+    color: $beige;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: $darkCamelBrown;
+    }
+  }
+}
+
+// About Section
+.about {
+  padding: 3rem 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $oliveGreen;
+  }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: $drabGreen;
+  }
+}
+
+// Featured Dishes
+.featured {
+  padding: 3rem 2rem;
+  background: $oliveGreen;
+  color: $beige;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .dishes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .dish {
+    width: 250px;
+    background: $drabGreen;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      margin-bottom: 0.5rem;
+      color: $camelBrown;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: $beige;
+    }
+  }
+}
+
+// Reservation Section
+.reservation {
+  padding: 3rem 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $oliveGreen;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: $drabGreen;
+  }
+
+  .cta-btn {
+    background: $darkCamelBrown;
+    color: $beige;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: $camelBrown;
+    }
+  }
+}
+
+
+.about-hero {
+  background: linear-gradient(rgba(96, 108, 56, 0.7), rgba(96, 108, 56, 0.7)),
+              url("images/about-bg.jpg") center/cover no-repeat;
+  color: $beige;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.story, .values, .team {
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.values ul {
+  list-style: none;
+  margin-top: 1rem;
+
+  li {
+    margin: 0.75rem 0;
+    font-size: 1.1rem;
+    strong {
+      color: $oliveGreen;
+    }
+  }
+}
+
+.chefs {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.chef {
+  width: 250px;
+  background: $drabGreen;
+  color: $beige;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: $camelBrown;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.menu-hero {
+  background: linear-gradient(rgba(40, 54, 24, 0.8), rgba(40, 54, 24, 0.8)),
+              url("images/menu-bg.jpg") center/cover no-repeat;
+  color: $beige;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  .menu-category {
+    background: $beige;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    h2 {
+      color: $darkCamelBrown;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid $camelBrown;
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px dotted $oliveGreen;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        span {
+          font-size: 1.1rem;
+        }
+
+        .price {
+          color: $drabGreen;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
